@@ -1,17 +1,15 @@
 /**
  * Copyright (C) 2014-2015 The Skfiy Open Association.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
  *
- *         http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
  */
 package org.skfiy.maven.plugin.fastconfig;
 
@@ -34,22 +32,33 @@ import org.jdom2.Element;
 import org.jdom2.input.SAXBuilder;
 
 /**
+ * 配置资源文件插件.
  *
  * @author Kevin Zou <kevinz@skfiy.org>
  */
 @Mojo(name = "configure", defaultPhase = LifecyclePhase.PREPARE_PACKAGE)
 public class FastconfigMojo extends AbstractMojo {
 
+    /**
+     * fast-config.xml文件.
+     */
     @Parameter(required = true)
     private File config;
+    /**
+     * 目标文件的编码.
+     */
     @Parameter(required = true, readonly = true, defaultValue = "${project.build.sourceEncoding}")
     private String encoding;
+    /**
+     * 资源文件的输出目录.
+     */
+    @Parameter(readonly = true, defaultValue = "${project.build.outputDirectory}")
+    private File outputDirectory;
+
     @Parameter(readonly = true, defaultValue = "${session}")
     private MavenSession session;
     @Parameter(readonly = true, defaultValue = "${mojo}")
     private MojoExecution execution;
-    @Parameter(readonly = true, defaultValue = "${project.build.outputDirectory}")
-    private File outputDirectory;
 
     @Override
     public void execute() throws MojoExecutionException {
