@@ -2,7 +2,7 @@
 ---
 在项目中我们需要对应不同的(**开发**,**测试**,**生产**)环境定制不同的**参数**(如:在**开发,测试**环境中我们的日志级别会设置成*debug*这样方便我们调试.但是在**生产**环境中我们的日志通常都不可能是*debug*级别,这时我们就需要对应不同的环境设置不同的参数,并且每次都会进行该~~繁琐~~的工作).
 
-fastconfig可以通过定制参数,在打包之前自动根据环境替换对应的参数设置,减少手动配置的工作量. 在fastconfig之前有[AutoConfig](http://www.openwebx.org/docs/autoconfig.html)及[portable-config-maven-config](https://github.com/juven/portable-config-maven-plugin)去做这样的工作.
+fastconfig可以通过定制参数,在打包之前自动根据环境替换对应的参数设置,减少手动配置的工作量. 在之前有[AutoConfig](http://www.openwebx.org/docs/autoconfig.html)及[portable-config-maven-config](https://github.com/juven/portable-config-maven-plugin)去做这样的工作.
 
 fastconfig的优点:
   1. 几乎支持所有的文本文件替换
