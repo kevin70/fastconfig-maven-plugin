@@ -6,7 +6,7 @@ fastconfig可以通过定制参数,在打包之前自动根据环境替换对应
 
 fastconfig的优点:
   1. 几乎支持所有的文本文件替换
-  2. 支持替换的模式丰富(properties, [xpath][http://www.w3schools.com/xpath/xpath_examples.asp],      [jsonpath](http://goessner.net/articles/JsonPath/), [regex](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html))
+  2. 支持替换的模式丰富(properties, [xpath](http://www.w3schools.com/xpath/xpath_examples.asp),      [jsonpath](http://goessner.net/articles/JsonPath/), [regex](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html))
   3. 支持多文件替换
   4. 支持Maven参数引用
 
