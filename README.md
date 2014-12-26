@@ -27,9 +27,14 @@ fastconfig的优点:
     </executions>
     <configuration>
       <config>fast-config.xml</config>
+      [<encoding>UTF-8</encoding>]
+      [<outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>]
     </configuration>
   </plugin>
   ```
+  + **config** fastconfig配置描述
+  + **encoding** 目标文件的编码
+  + **outputDirectory** 文件的输入目录
 
 2. fast-config.xml配置文件
   ```xml
@@ -55,10 +60,10 @@ fastconfig的优点:
   </fast-config>
   ```
 
-+ **config-file**节点配置所需要替换的配置文件信息
-  * **path**属性表示配置文件的路径
-  * **mode**替换模式(属性值:*property*, *xpath*, *jsonpath*, *regex*), 如果文件的后缀名为.properties, .xml, .json时fastconfig会根据文件后缀名自动识别替换模式. 如果你替换的模式为*regex*那则必须显示声明fastconfig无法自识别, 因为该模式可以用于任何文本文件的替换工作.
-
-+ **replacement**节点具体的替换表达式及替换结果
-  * **expression**替换表达式支持(property, xpath, jsonpath, regex)
-  * **#text**替换的结果(可使用Maven参数,如**${hello.param}**).
+  + **config-file**节点配置所需要替换的配置文件信息
+    * **path**属性表示配置文件的路径
+    * **mode**替换模式(属性值:*property*, *xpath*, *jsonpath*, *regex*), 如果文件的后缀名为.properties, .xml, .json时fastconfig会根据文件后缀名自动识别替换模式. 如果你替换的模式为*regex*那则必须显示声明fastconfig无法自识别, 因为该模式可以用于任何文本文件的替换工作.
+  
+  + **replacement**节点具体的替换表达式及替换结果
+    * **expression**替换表达式支持(property, xpath, jsonpath, regex)
+    * **#text**替换的结果(可使用Maven参数,如**${hello.param}**).
